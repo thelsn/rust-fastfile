@@ -3,6 +3,19 @@ name = "fastfile_search"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+default = []
+ai = [
+    "dep:tch", 
+    "dep:rust-bert", 
+    "dep:annoy-rs", 
+    "dep:faiss",
+    "dep:lopdf",
+    "dep:docx-rs",
+    "dep:calamine",
+    "dep:pulldown-cmark"
+]
+
 [profile.release]
 lto = "fat"
 codegen-units = 1
@@ -17,8 +30,18 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 walkdir = "2.3"
 zstd = "0.13.2"
-annoy-rs = "0.1.0"
-faiss = "0.12.1"
-tch = "0.17.0"
-rust-bert = "0.23"
 indicatif = { version = "0.17", features = ["rayon"] }
+encoding_rs = "0.8"
+toml = "0.8.2"
+
+# Optional AI dependencies
+tch = { version = "0.17.0", optional = true }
+rust-bert = { version = "0.23", optional = true }
+annoy-rs = { version = "0.1.0", optional = true }
+faiss = { version = "0.12.1", optional = true }
+
+# Optional document parsing dependencies
+lopdf = { version = "0.35.0", optional = true }
+docx-rs = { version = "0.4", optional = true }
+calamine = { version = "0.26.1", optional = true }
+pulldown-cmark = { version = "0.13", optional = true }

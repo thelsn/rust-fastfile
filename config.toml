@@ -1,0 +1,18 @@
+# General settings
+root_dir = "C:\\"    # Default search root directory
+index_file = "index.filemap"  # Filename for the index
+
+# File size limitation (in bytes)
+max_file_size = 52428800      # 50 MB
+
+# AI Search Settings
+model_id = "sentence-transformers/all-MiniLM-L6-v2"
+model_dir = "./models"        # Directory to store model files
+semantic_batch_size = 500     # Good for 12gb of VRAM
+top_n_results = 10
+
+# Watcher settings
+update_cooldown_secs = 60     # Cooldown period before index rebuild (in seconds)
+
+# Threading configuration
+rayon_thread_count = 32
