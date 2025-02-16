@@ -1,0 +1,6 @@
+{
+    "architectures": ["BertModel"],
+    "model_type": "bert",
+    "max_seq_length": 128,
+    "do_lower_case": true
+}

@@ -1,0 +1,24 @@
+[package]
+name = "fastfile_search"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+opt-level = 3
+
+[dependencies]
+dashmap = "6.1"
+notify = "8.0.0"
+rayon = "1.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+walkdir = "2.3"
+zstd = "0.13.2"
+annoy-rs = "0.1.0"
+faiss = "0.12.1"
+tch = "0.17.0"
+rust-bert = "0.23"
+indicatif = { version = "0.17", features = ["rayon"] }
